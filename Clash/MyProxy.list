@@ -1,0 +1,18 @@
+# 自定义代理Proxy
+
+# 匹配域名关键字
+DOMAIN-KEYWORD,facebook
+
+# 匹配域名后缀
+DOMAIN-SUFFIX,javdb.com
+DOMAIN-SUFFIX,duboku.com
+DOMAIN-SUFFIX,cnys.tv
+DOMAIN-SUFFIX,spankbang.com
+DOMAIN-SUFFIX,wallhaven.cc
+DOMAIN-SUFFIX,whvn.cc
+DOMAIN-SUFFIX,wallpaperscraft.com
+DOMAIN-SUFFIX,10wallpaper.com
+DOMAIN-SUFFIX,wallpapermaiden.com
+DOMAIN-SUFFIX,wallpaperswide.com
+DOMAIN-SUFFIX,wallpaperup.com
+DOMAIN-SUFFIX,wetv.vip
