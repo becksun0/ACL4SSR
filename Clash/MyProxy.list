@@ -4,6 +4,7 @@
 DOMAIN-KEYWORD,facebook
 
 # 匹配域名后缀
+DOMAIN,www.becksun.cn
 DOMAIN-SUFFIX,javdb.com
 DOMAIN-SUFFIX,duboku.com
 DOMAIN-SUFFIX,cnys.tv
