@@ -6,6 +6,7 @@ DOMAIN-KEYWORD,facebook
 # 匹配域名后缀
 DOMAIN,raw.githubusercontent.com
 DOMAIN,www.becksun.cn
+DOMAIN,op.gg
 DOMAIN-SUFFIX,javdb.com
 DOMAIN-SUFFIX,duboku.com
 DOMAIN-SUFFIX,cnys.tv
