@@ -2,6 +2,7 @@
 
 # 匹配域名关键字
 DOMAIN-KEYWORD,facebook
+DOMAIN-KEYWORD,krx18
 
 # 匹配域名后缀
 DOMAIN,raw.githubusercontent.com
