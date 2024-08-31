@@ -4,6 +4,7 @@
 DOMAIN-KEYWORD,ffzy
 
 # 匹配域名后缀
+DOMAIN,raw.githubusercontent.com
 DOMAIN-SUFFIX,time.windows.com
 DOMAIN-SUFFIX,speedtest.net
 DOMAIN-SUFFIX,nnvod.com
