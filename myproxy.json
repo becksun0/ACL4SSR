@@ -2,6 +2,10 @@
   "version": 1,
   "rules": [
     {
+      "domain":[
+        "www.becksun.cn",
+        "op.gg"
+      ],
       "domain_suffix": [
         "duboku.com",
         "cnys.tv",
@@ -14,10 +18,15 @@
         "wallpaperup.com",
         "javdb.com",
         "spankbang.com",
-        "wetv.vip"
-      ]
+        "wetv.vip",
+        "irine-sistiana.gitbook.io",
+        "tanhuatv.site",
+        "koreanpornmovie.com",
+        "netflav.com"
+      ],
       "domain_keywork":[
-        "facebook"
+        "facebook",
+        "krx18"
       ]
     }
   ]
