@@ -2,6 +2,7 @@
 
 # 匹配域名关键字
 DOMAIN-KEYWORD,ffzy
+DOMAIN-KEYWORD,lzizy
 
 # 匹配域名后缀
 DOMAIN-SUFFIX,time.windows.com
