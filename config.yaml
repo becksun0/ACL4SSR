@@ -47,13 +47,13 @@ proxy-groups:
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 60}
   - {name: 📲 Telegram, type: select, proxies: [🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连]}
   - {name: 💬 OpenAi, type: select, proxies: [🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连]}
+  - {name: 👨🏿‍💻 GitHub, type: select, proxies: [🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连], include-all: true}
+  - {name: 🎵 TikTok, type: select, proxies: [🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连], include-all: true}
   - {name: 📹 油管视频, type: select, proxies: [🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连]}
   - {name: 🎥 奈飞视频, type: select, proxies: [🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连]}
   - {name: Ⓜ️ 微软服务, type: select, proxies: [🎯 全球直连, 🇭🇰 香港节点, 🇺🇲 美国节点], include-all: true}
   - {name: 🍎 苹果服务, type: select, proxies: [🎯 全球直连, 🇭🇰 香港节点, 🇺🇲 美国节点], include-all: true}
   - {name: 📢 谷歌服务, type: select, proxies: [🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连], include-all: true}
-  - {name: 👨🏿‍💻 GitHub, type: select, proxies: [🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连], include-all: true}
-  - {name: 🎵 TikTok, type: select, proxies: [🚀 节点选择, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连], include-all: true}
   - {name: 🎯 全球直连, type: select, proxies: [DIRECT, 🚀 节点选择]}
   - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 节点选择, 🎯 全球直连, ♻️ 自动选择], include-all: true}
   - {name: 🇭🇰 香港节点, type: url-test, include-all: true, filter: "(?i)港|hk|hongkong|hong kong"}
@@ -68,13 +68,13 @@ rules:
   - RULE-SET,myproxy,🚀 手动切换
   - RULE-SET,telegram_domain,📲 Telegram
   - RULE-SET,openai,💬 OpenAi
+  - RULE-SET,github_domain,👨🏿‍💻 GitHub
+  - RULE-SET,tiktok_domain,🎵 TikTok
   - RULE-SET,youtube_domain,📹 油管视频
   - RULE-SET,netflix_domain,🎥 奈飞视频
   - RULE-SET,microsoft_domain,Ⓜ️ 微软服务
   - RULE-SET,apple_domain,🍎 苹果服务
   - RULE-SET,google_domain,📢 谷歌服务
-  - RULE-SET,github_domain,👨🏿‍💻 GitHub
-  - RULE-SET,tiktok_domain,🎵 TikTok
   - RULE-SET,geolocation-!cn,🚀 节点选择
   - RULE-SET,cn_domain,🎯 全球直连
   - RULE-SET,google_ip,📢 谷歌服务,no-resolve
