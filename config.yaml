@@ -80,7 +80,7 @@ rules:
   - RULE-SET,geolocation-!cn,🚀 节点选择
   - RULE-SET,cn_domain,🎯 全球直连
   - RULE-SET,google_ip,📢 谷歌服务,no-resolve
-  - RULE-SET,netflix_ip,🎥 奈飞视频,no-resolve,no-resolve
+  - RULE-SET,netflix_ip,🎥 奈飞视频,no-resolve
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
   - RULE-SET,cn_ip,🎯 全球直连
   - MATCH,🚀 节点选择
