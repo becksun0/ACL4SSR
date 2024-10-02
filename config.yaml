@@ -77,13 +77,13 @@ rules:
   - RULE-SET,microsoft_domain,Ⓜ️ 微软服务
   - RULE-SET,apple_domain,🍎 苹果服务
   - RULE-SET,google_domain,📢 谷歌服务
-  - RULE-SET,geolocation-!cn,🚀 节点选择
   - RULE-SET,cn_domain,🎯 全球直连
+  - RULE-SET,geolocation-!cn,🚀 节点选择
   - RULE-SET,google_ip,📢 谷歌服务,no-resolve
   - RULE-SET,netflix_ip,🎥 奈飞视频,no-resolve
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
   - RULE-SET,cn_ip,🎯 全球直连
-  - MATCH,🚀 节点选择
+  - MATCH,🐟 漏网之鱼
 rule-anchor:
   ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
