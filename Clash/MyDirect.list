@@ -11,7 +11,6 @@ DOMAIN-SUFFIX,speedtest.net
 DOMAIN-SUFFIX,nnvod.com
 DOMAIN-SUFFIX,guangsuzy.com
 DOMAIN-SUFFIX,onlyfans.com
-DOMAIN-SUFFIX,spotify.com
 
 # IP段匹配
 IP-CIDR,219.146.1.66/32,no-resolve
