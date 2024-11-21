@@ -90,8 +90,8 @@ rule-anchor:
   beck: &beck {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers: 
   private_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs" }
-  mydirect: { <<: *beck, url: "https://raw.githubusercontent.com/becksun0/ACL4SSR/refs/heads/master/Clash/MyDirect.list" }
-  myproxy: { <<: *beck, url: "https://raw.githubusercontent.com/becksun0/ACL4SSR/refs/heads/master/Clash/MyProxy.list" }
+  mydirect: { <<: *beck, url: "https://raw.githubusercontent.com/becksun0/ACL4SSR/refs/heads/main/mihomo/MyDirect.list" }
+  myproxy: { <<: *beck, url: "https://raw.githubusercontent.com/becksun0/ACL4SSR/refs/heads/main/mihomo/MyProxy.list" }
   telegram_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs" }
   openai: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/openai.mrs" }
   spotify_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.mrs" }
