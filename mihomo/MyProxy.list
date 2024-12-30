@@ -3,12 +3,12 @@
 # 匹配域名关键字
 DOMAIN-KEYWORD,facebook
 DOMAIN-KEYWORD,krx18
+DOMAIN-KEYWORD,duboku
 
 # 匹配域名后缀
 DOMAIN,www.becksun.cn
 DOMAIN,op.gg
 DOMAIN-SUFFIX,javdb.com
-DOMAIN-SUFFIX,duboku.com
 DOMAIN-SUFFIX,cnys.tv
 DOMAIN-SUFFIX,spankbang.com
 DOMAIN-SUFFIX,wallhaven.cc
