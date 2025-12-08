@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain_keyword": [
+        "ffzy",
+        "lzizy",
+        "mirror"
+      ],
+      "domain_suffix": [
+        "time.windows.com",
+        "speedtest.net",
+        "nnvod.com",
+        "guangsuzy.com"
+      ]
+    }
+  ]
+}
