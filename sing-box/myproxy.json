@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain_keyword": [
+        "facebook",
+        "krx18",
+        "duboku"
+      ],
+      "domain_suffix": [
+        "javdb.com",
+        "cnys.tv",
+        "spankbang.com",
+        "wallhaven.cc",
+        "whvn.cc",
+        "wallpaperscraft.com",
+        "10wallpaper.com",
+        "wallpapermaiden.com",
+        "wallpaperswide.com",
+        "wallpaperup.com",
+        "wetv.vip",
+        "irine-sistiana.gitbook.io",
+        "tanhuatv.site",
+        "koreanpornmovie.com",
+        "netflav.com",
+        "javmost.com",
+        "24av.net",
+        "pikaso.top",
+        "sysupgrade.kyarucloud.moe",
+        "wiki.metacubex.one",
+        "tokyolib.com",
+        "x.com",
+        "69yun69.com",
+        "tuneskit.com",
+        "v2rayssr.com"
+      ],
+      "domain": [
+        "op.gg"
+      ]
+    }
+  ]
+}
