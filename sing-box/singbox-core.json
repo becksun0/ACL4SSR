@@ -1,13 +1,11 @@
 {
   "dns": {
     "servers": [
-      {"tag": "local", "address": "223.5.5.5", "detour": "🎯 全球直连"},
-      {"tag": "localDns", "address": "https://dns.alidns.com/dns-query", "address_resolver": "local", "detour": "🎯 全球直连"},
-      {"tag": "proxyDns", "address": "https://dns.google/dns-query", "address_resolver": "local", "detour": "🚀 默认代理"},
-      {"tag": "fakeip","address": "fakeip" }
+      {"tag": "local", "type": "udp", "server": "223.5.5.5"},
+      {"tag": "localDns", "type": "https", "server": "dns.alidns.com/dns-query", "domain_resolver": "local"},
+      {"tag": "proxyDns", "type": "https", "server": "dns.google/dns-query", "domain_resolver": "localDns", "detour": "🚀 默认代理"}
     ],
     "rules": [
-      {"outbound": "any", "server": "localDns"},
       {"clash_mode": "direct", "server": "localDns"},
       {"clash_mode": "global", "server": "proxyDns"},
       {"rule_set": "geosite-cn", "server": "localDns"},
