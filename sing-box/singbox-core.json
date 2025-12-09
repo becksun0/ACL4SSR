@@ -2,25 +2,45 @@
   "dns": {
     "servers": [
       {"tag": "local", "address": "223.5.5.5", "detour": "🎯 全球直连"},
-      {"tag": "public", "address": "https://dns.alidns.com/dns-query", "address_resolver": "local", "detour": "🎯 全球直连"},
-      {"tag": "foreign", "address": "https://dns.google/dns-query", "address_resolver": "local", "detour": "🚀 默认代理"},
+      {"tag": "localDns", "address": "https://dns.alidns.com/dns-query", "address_resolver": "local", "detour": "🎯 全球直连"},
+      {"tag": "proxyDns", "address": "https://dns.google/dns-query", "address_resolver": "local", "detour": "🚀 默认代理"},
       {"tag": "fakeip","address": "fakeip" }
     ],
     "rules": [
-      {"clash_mode": "direct", "server": "local"},
-      {"clash_mode": "global", "server": "fakeip"},
-      {"query_type": "HTTPS", "action": "reject"},
-      {"rule_set": "geosite-fakeipfilter", "server": "local"},
-      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1},
-      {"rule_set": "geosite-cn", "server": "local"}
+      {"outbound": "any", "server": "localDns"},
+      {"clash_mode": "direct", "server": "localDns"},
+      {"clash_mode": "global", "server": "proxyDns"},
+      {"rule_set": "geosite-cn", "server": "localDns"},
+      {"rule_set": "geosite-fakeipfilter", "server": "localDns"},
+      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
     ],
     "fakeip": {"enabled": true, "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"},
-    "final": "foreign",
+    "final": "proxyDns",
     "client_subnet": "223.5.5.0/24",
     "strategy": "prefer_ipv4",
     "independent_cache": true,
     "reverse_mapping": true
   },
+  "inbounds": [
+    {
+      "tag": "tun-in",
+      "type": "tun",
+      "address": [
+        "172.31.0.1/30",
+        "fdfe:dcba:9876::1/126",
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "auto_redirect": true,
+      "strict_route": false,
+      "stack": "system"
+    },
+    {
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
+    }
+  ],
   "outbounds": [
     {"tag": "🚀 默认代理", "type": "selector", "outbounds": ["♻️ 自动选择", "🐸 手动选择", "🎯 全球直连", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇰🇷 韩国节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "{all}"]},
     {"tag": "🐸 手动选择", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["网站|流量|地址|剩余|过期|免费|时间|有效|Traffic|ExpireDate|GB|Expire Date"]}]},
@@ -104,25 +124,6 @@
     "auto_detect_interface": true,
     "default_domain_resolver": {"server": "public"}
   },
-  "inbounds": [
-    {
-      "tag": "tun-in",
-      "type": "tun",
-      "address": [
-        "172.31.0.1/30",
-        "fdfe:dcba:9876::1/126",
-      ],
-      "mtu": 9000,
-      "auto_route": false,
-      "auto_redirect": false,
-      "strict_route": false
-    },
-    {
-      "type": "mixed",
-      "listen": "127.0.0.1",
-      "listen_port": 7890
-    }
-  ],
   "experimental": {
     "cache_file": {
       "enabled": true,
@@ -130,7 +131,7 @@
       "store_fakeip": true
     },
     "clash_api": {
-      "external_controller": "0.0.0.0:9095",
+      "external_controller": "0.0.0.0:9090",
       "external_ui": "/etc/momo/run/ui",
       "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
       "external_ui_download_detour": "🎯 全球直连",
