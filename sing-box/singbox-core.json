@@ -3,16 +3,18 @@
     "servers": [
       {"tag": "local", "type": "udp", "server": "223.5.5.5"},
       {"tag": "localDns", "type": "https", "server": "dns.alidns.com", "domain_resolver": "local"},
-      {"tag": "proxyDns", "type": "tls", "server": "1.1.1.1", "domain_resolver": "localDns", "detour": "🚀 默认代理"}
+      {"tag": "proxyDns", "type": "tls", "server": "8.8.8.8", "domain_resolver": "localDns", "detour": "🚀 默认代理"},
+      {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
     ],
     "rules": [
       {"clash_mode": "direct", "server": "localDns"},
       {"clash_mode": "global", "server": "proxyDns"},
+      {"query_type": ["A", "AAAA"], "rule_set": "geosite-cn", "server": "fakeip"},
       {"rule_set": "geosite-cn", "server": "localDns"},
       {"rule_set": "geosite-fakeipfilter", "server": "localDns"},
-      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
+      {"rule_set": "geosite-!cn", "server": "proxyDns"},
+      {"query_type": ["A", "AAAA"], "server": "fakeip"}
     ],
-    "fakeip": {"enabled": true, "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"},
     "final": "proxyDns",
     "client_subnet": "223.5.5.0/24",
     "strategy": "prefer_ipv4",
@@ -30,10 +32,18 @@
       "mtu": 9000,
       "auto_route": true,
       "auto_redirect": true,
-      "strict_route": false,
-      "stack": "system"
+      "strict_route": true,
+      "stack": "system",
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 7890
+        }
+      }
     },
     {
+      "tag": "mixed-in",
       "type": "mixed",
       "listen": "127.0.0.1",
       "listen_port": 7890
@@ -66,6 +76,8 @@
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 默认代理", "🐸 手动选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇰🇷 韩国节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "{all}"]}
   ],
   "route": {
+    "default_domain_resolver": {"server": "localDns"},
+    "auto_detect_interface": true,
     "rules": [
       {"inbound": "dns-in", "action": "hijack-dns"},
       {"ip_is_private": true, "outbound": "🎯 全球直连"},
@@ -118,9 +130,7 @@
       {"tag": "geoip-twitter", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/twitter.srs", "download_detour": "🎯 全球直连"},
       {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/qljsyph/ruleset-icon/raw/refs/heads/main/sing-box/geoip/China-ASN-combined-ip.srs", "download_detour": "🎯 全球直连"}
     ],
-    "final": "🐟 漏网之鱼",
-    "auto_detect_interface": true,
-    "default_domain_resolver": {"server": "localDns"}
+    "final": "🐟 漏网之鱼"
   },
   "experimental": {
     "cache_file": {
