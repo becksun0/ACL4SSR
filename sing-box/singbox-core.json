@@ -2,8 +2,8 @@
   "dns": {
     "servers": [
       {"tag": "local", "type": "udp", "server": "223.5.5.5"},
-      {"tag": "localDns", "type": "https", "server": "dns.alidns.com/dns-query", "domain_resolver": "local"},
-      {"tag": "proxyDns", "type": "https", "server": "dns.google/dns-query", "domain_resolver": "localDns", "detour": "🚀 默认代理"}
+      {"tag": "localDns", "type": "https", "server": "dns.alidns.com", "domain_resolver": "local"},
+      {"tag": "proxyDns", "type": "tls", "server": "1.1.1.1", "domain_resolver": "localDns", "detour": "🚀 默认代理"}
     ],
     "rules": [
       {"clash_mode": "direct", "server": "localDns"},
