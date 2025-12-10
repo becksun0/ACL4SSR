@@ -8,12 +8,11 @@
     ],
     "rules": [
       {"clash_mode": "direct", "server": "local"},
-      {"clash_mode": "global", "server": "foreign"},
+      {"clash_mode": "global", "server": "fakeip"},
+      {"query_type": "HTTPS", "action": "reject"},
       {"query_type": ["A", "AAAA"], "rule_set": "geosite-cn", "server": "fakeip"},
       {"rule_set": "geosite-cn", "server": "local"},
-      {"rule_set": "geosite-fakeipfilter", "server": "local"},
-      {"rule_set": "geosite-!cn", "server": "foreign"},
-      {"query_type": ["A", "AAAA"], "server": "fakeip"}
+      {"rule_set": "geosite-fakeipfilter", "server": "local"}
     ],
     "final": "foreign",
     "client_subnet": "223.5.5.0/24",
