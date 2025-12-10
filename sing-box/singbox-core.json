@@ -138,12 +138,6 @@
       "default_mode": "rule"
     }
   },
-  "ntp": {
-    "enabled": false,
-    "server": "time.apple.com",
-    "server_port": 123,
-    "interval": "30m"
-  },
   "log": {
     "disabled": false,
     "level": "info",
