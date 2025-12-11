@@ -99,11 +99,11 @@ proxy-groups:
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 50, interval: 180, exclude-filter: "🎯 全球直连"}
   - {name: 📲 Telegram, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连]}
   - {name: 💬 OpenAi, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连]}
-  - {name: ⌨️ Cursor, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点, 🎯 全球直连], include-all: true}
-  - {name: 👨🏿‍💻 GitHub, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连], include-all: true}
-  - {name: 🎶 Spotify, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连], include-all: true}
-  - {name: 🎵 TikTok, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连], include-all: true}
-  - {name: 𝕏 Twitter, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连], include-all: true}
+  - {name: ⌨️ Cursor, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇺🇲 美国节点], include-all: true}
+  - {name: 👨🏿‍💻 GitHub, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点], include-all: true}
+  - {name: 🎶 Spotify, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点], include-all: true}
+  - {name: 🎵 TikTok, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点], include-all: true}
+  - {name: 𝕏 Twitter, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点], include-all: true}
   - {name: 📹 YouTube, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连]}
   - {name: 🎥 Netflix, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连]}
   - {name: Ⓜ️ 微软服务, type: select, proxies: [🎯 全球直连, 🇭🇰 香港节点, 🇺🇲 美国节点], include-all: true}
