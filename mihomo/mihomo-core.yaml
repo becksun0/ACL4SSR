@@ -109,7 +109,7 @@ proxy-groups:
   - {name: Ⓜ️ 微软服务, type: select, proxies: [🎯 全球直连, 🇭🇰 香港节点, 🇺🇲 美国节点], include-all: true}
   - {name: 🍎 苹果服务, type: select, proxies: [🎯 全球直连, 🇭🇰 香港节点, 🇺🇲 美国节点], include-all: true}
   - {name: 📢 谷歌服务, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连], include-all: true}
-  - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 默认代理, 🎯 全球直连, ♻️ 自动选择], include-all: true}
+  - {name: 🐟 漏网之鱼, type: select, proxies: [🚀 默认代理, ♻️ 自动选择], include-all: true}
   - {name: 🇭🇰 香港节点, type: url-test, include-all: true, tolerance: 50, interval: 180, filter: "(?i)港|hk|hongkong|hong kong"}
   - {name: 🇹🇼 台湾节点, type: url-test, include-all: true, tolerance: 50, interval: 180, filter: "(?i)台|新北|彰化|TW|Taiwan|TPE|KHH"}
   - {name: 🇰🇷 韩国节点, type: url-test, include-all: true, tolerance: 50, interval: 180, filter: "(?i)KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN"}
