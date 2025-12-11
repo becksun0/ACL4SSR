@@ -4,6 +4,7 @@
       {"tag": "local", "type": "udp", "server": "223.5.5.5"},
       {"tag": "public", "type": "https", "server": "dns.alidns.com", "domain_resolver": "local"},
       {"tag": "foreign", "type": "https", "server": "8.8.8.8", "detour": "🚀 默认代理"},
+      {"tag": "cf", "type": "https", "server": "https://1.1.1.1/dns-query", "detour": "🎯 全球直连"},
       {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
     ],
     "rules": [
@@ -13,16 +14,16 @@
       {"rule_set": "geosite-fakeipfilter", "server": "local"},
       {"query_type": ["A", "AAAA"], "server": "fakeip"}
     ],
-    "final": "foreign",
+    "final": "cf",
     "client_subnet": "223.5.5.0/24",
     "strategy": "prefer_ipv4",
     "independent_cache": true,
     "reverse_mapping": true
   },
   "outbounds": [
-    {"tag": "🚀 默认代理", "type": "selector", "outbounds": ["♻️ 自动选择", "🐸 手动选择", "🎯 全球直连", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇰🇷 韩国节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "{all}"]},
-    {"tag": "🐸 手动选择", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["网站|流量|地址|剩余|过期|免费|时间|有效|Traffic|ExpireDate|GB|Expire Date"]}]},
-    {"tag": "♻️ 自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["官网|到期时间|剩余|流量|套餐|免费|订阅|全球直连|GB|Expire Date|Traffic|Expire Date"]}], "interval": "3m", "tolerance": 50},
+    {"tag": "🚀 默认代理", "type": "selector", "outbounds": ["♻️ 自动选择", "🐸 手动选择", "🎯 全球直连", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇰🇷 韩国节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "{all}", "filter": [{"action": "exclude", "keywords": ["官网|到期时间|剩余|流量|套餐|免费|订阅|全球直连|GB|Expire Date|Traffic"]}]]},
+    {"tag": "🐸 手动选择", "type": "selector", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["网站|流量|地址|剩余|过期|免费|时间|有效|Traffic|Expire Date|GB|Expire Date"]}]},
+    {"tag": "♻️ 自动选择", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "exclude", "keywords": ["官网|到期时间|剩余|流量|套餐|免费|订阅|全球直连|GB|Expire Date|Traffic"]}], "url": "http://www.gstatic.com/generate_204", "interval": "3m", "tolerance": 50},
     {"tag": "📲 Telegram", "type": "selector", "outbounds": ["♻️ 自动选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇰🇷 韩国节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🎯 全球直连", "{all}"]},
     {"tag": "🧠 OpenAi", "type": "selector", "outbounds": ["♻️ 自动选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇰🇷 韩国节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🎯 全球直连", "{all}"]},
     {"tag": "⌨️ Cursor", "type": "selector", "outbounds": ["♻️ 自动选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇰🇷 韩国节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🎯 全球直连", "{all}"]},
@@ -37,12 +38,12 @@
     {"tag": "📢 谷歌服务", "type": "selector", "outbounds": ["♻️ 自动选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇰🇷 韩国节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🎯 全球直连", "{all}"]},
     {"tag": "🎯 全球直连", "type": "direct"},
     {"tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["🎯 全球直连", "{all}"]},
-    {"tag": "🇭🇰 香港节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"]}, {"action": "exclude", "keywords": ["免费"]}], "interval": "3m", "tolerance": 50},
-    {"tag": "🇹🇼 台湾节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇹🇼|台|新北|彰化|TW|Taiwan|TPE|KHH"]}, {"action": "exclude", "keywords": ["免费"]}], "interval": "3m", "tolerance": 50},
-    {"tag": "🇰🇷 韩国节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇰🇷|KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN"]}, {"action": "exclude", "keywords": ["免费"]}], "interval": "3m", "tolerance": 50},
-    {"tag": "🇯🇵 日本节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇯🇵|JP|jp|日本|日|Japan"]}, {"action": "exclude", "keywords": ["免费"]}], "interval": "3m", "tolerance": 50},
-    {"tag": "🇸🇬 狮城节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["新加坡|坡|狮城|SG|Singapore"]}, {"action": "exclude", "keywords": ["免费"]}], "interval": "3m", "tolerance": 50},
-    {"tag": "🇺🇲 美国节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇺🇸|US|us|美国|美|United States"]}, {"action": "exclude", "keywords": ["AUS|RUS|免费"]}], "interval": "3m", "tolerance": 50},
+    {"tag": "🇭🇰 香港节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"]}, {"action": "exclude", "keywords": ["免费|GB|Traffic Reset|Expire Date"]}], "url": "http://www.gstatic.com/generate_204", "interval": "3m", "tolerance": 50},
+    {"tag": "🇹🇼 台湾节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇹🇼|台|新北|彰化|TW|Taiwan|TPE|KHH"]}, {"action": "exclude", "keywords": ["免费|GB|Traffic Reset|Expire Date"]}], "url": "http://www.gstatic.com/generate_204", "interval": "3m", "tolerance": 50},
+    {"tag": "🇰🇷 韩国节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇰🇷|KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN"]}, {"action": "exclude", "keywords": ["免费|GB|Traffic Reset|Expire Date"]}], "url": "http://www.gstatic.com/generate_204", "interval": "3m", "tolerance": 50},
+    {"tag": "🇯🇵 日本节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇯🇵|JP|jp|日本|日|Japan"]}, {"action": "exclude", "keywords": ["免费|GB|Traffic Reset|Expire Date"]}], "url": "http://www.gstatic.com/generate_204", "interval": "3m", "tolerance": 50},
+    {"tag": "🇸🇬 狮城节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["新加坡|坡|狮城|SG|Singapore"]}, {"action": "exclude", "keywords": ["免费|GB|Traffic Reset|Expire Date"]}], "url": "http://www.gstatic.com/generate_204", "interval": "3m", "tolerance": 50},
+    {"tag": "🇺🇲 美国节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇺🇸|US|us|美国|美|United States"]}, {"action": "exclude", "keywords": ["AUS|RUS|免费|GB|Traffic Reset|Expire Date"]}], "url": "http://www.gstatic.com/generate_204", "interval": "3m", "tolerance": 50},
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["🎯 全球直连", "🚀 默认代理", "🐸 手动选择", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇰🇷 韩国节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "{all}"]}
   ],
   "route": {
@@ -97,7 +98,7 @@
       {"tag": "geoip-apple", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs", "download_detour": "🎯 全球直连"},
       {"tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs", "download_detour": "🎯 全球直连"},
       {"tag": "geoip-twitter", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/twitter.srs", "download_detour": "🎯 全球直连"},
-      {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.org/https:/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs", "download_detour": "🎯 全球直连"}
+      {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs", "download_detour": "🎯 全球直连"}
     ],
     "final": "🐟 漏网之鱼",
     "auto_detect_interface": true,
