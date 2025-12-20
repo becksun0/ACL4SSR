@@ -6,7 +6,6 @@ DOMAIN-KEYWORD,krx18
 DOMAIN-KEYWORD,duboku
 
 # 匹配域名后缀
-DOMAIN,www.becksun.cn
 DOMAIN,op.gg
 DOMAIN-SUFFIX,javdb.com
 DOMAIN-SUFFIX,cnys.tv
