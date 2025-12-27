@@ -7,7 +7,6 @@ DOMAIN-KEYWORD,duboku
 
 # 匹配域名后缀
 DOMAIN,op.gg
-DOMAIN,qichiyu.com
 DOMAIN-SUFFIX,javdb.com
 DOMAIN-SUFFIX,cnys.tv
 DOMAIN-SUFFIX,spankbang.com
@@ -32,3 +31,4 @@ DOMAIN-SUFFIX,tokyolib.com
 DOMAIN-SUFFIX,69yun69.com
 DOMAIN-SUFFIX,tuneskit.com
 DOMAIN-SUFFIX,v2rayssr.com
+DOMAIN-SUFFIX,qichiyu.com
