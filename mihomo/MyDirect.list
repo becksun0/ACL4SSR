@@ -4,6 +4,7 @@
 DOMAIN-KEYWORD,ffzy
 DOMAIN-KEYWORD,lzizy
 DOMAIN-KEYWORD,mirror
+DOMAIN-KEYWORD,xunlei,DIRECT
 
 # 匹配域名后缀
 DOMAIN-SUFFIX,time.windows.com
@@ -11,3 +12,6 @@ DOMAIN-SUFFIX,speedtest.net
 DOMAIN-SUFFIX,nnvod.com
 DOMAIN-SUFFIX,guangsuzy.com
 DOMAIN-SUFFIX,onlyfans.com
+DOMAIN-SUFFIX,xunlei.com,DIRECT
+DOMAIN-SUFFIX,sandai.net,DIRECT
+DOMAIN-SUFFIX,onethingcloud.com,DIRECT
