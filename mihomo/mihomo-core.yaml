@@ -22,13 +22,13 @@ proxy-providers:
 
 # 节点信息
 proxies:
-  - {name: 🎯 全球直连, type: direct}
+  - {name: 🎯 全球直连, type: direct, }
 
 # 全局配置 
 mixed-port: 7890
 allow-lan: true
 bind-address: "*"
-ipv6: false
+ipv6: true
 unified-delay: true
 tcp-concurrent: true
 log-level: warning
