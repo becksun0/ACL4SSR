@@ -4,11 +4,11 @@
 DOMAIN-KEYWORD,facebook
 DOMAIN-KEYWORD,krx18
 DOMAIN-KEYWORD,duboku
+DOMAIN-KEYWORD,javdb
 
 # 匹配域名后缀
 DOMAIN,op.gg
 DOMAIN,dog.ssrdog.com
-DOMAIN-SUFFIX,javdb.com
 DOMAIN-SUFFIX,cnys.tv
 DOMAIN-SUFFIX,spankbang.com
 DOMAIN-SUFFIX,wallhaven.cc
