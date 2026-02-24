@@ -110,6 +110,7 @@ proxy-groups:
   - {name: 𝕏 Twitter, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点], include-all: true}
   - {name: 📹 YouTube, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连]}
   - {name: 🎥 Netflix, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连]}
+  - {name: 🪖 PUBG, type: select, include-all: true}
   - {name: Ⓜ️ 微软服务, type: select, proxies: [🎯 全球直连, 🇭🇰 香港节点, 🇺🇲 美国节点], include-all: true}
   - {name: 🍎 苹果服务, type: select, proxies: [🎯 全球直连, 🇭🇰 香港节点, 🇺🇲 美国节点], include-all: true}
   - {name: 📢 谷歌服务, type: select, proxies: [🚀 默认代理, ♻️ 自动选择, 🇭🇰 香港节点, 🇰🇷 韩国节点, 🇸🇬 狮城节点, 🇺🇲 美国节点, 🎯 全球直连], include-all: true}
@@ -135,6 +136,7 @@ rules:
   - RULE-SET,twitter_domain,𝕏 Twitter
   - RULE-SET,youtube_domain,📹 YouTube
   - RULE-SET,netflix_domain,🎥 Netflix
+  - RULE-SET,pubg_domain,🪖 PUBG
   - RULE-SET,microsoft_domain,Ⓜ️ 微软服务
   - RULE-SET,apple_domain,🍎 苹果服务
   - RULE-SET,google_domain,📢 谷歌服务
@@ -166,6 +168,7 @@ rule-providers:
   google_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs" }
   github_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs" }
   netflix_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs" }
+  pubg_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/pubg.mrs" }
   paypal_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs" }
   microsoft_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs" }
   apple_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs" }
