@@ -5,6 +5,7 @@ DOMAIN-KEYWORD,facebook
 DOMAIN-KEYWORD,krx18
 DOMAIN-KEYWORD,duboku
 DOMAIN-KEYWORD,javdb
+DOMAIN-KEYWORD,valtrogen
 
 # 匹配域名后缀
 DOMAIN,op.gg
@@ -37,4 +38,3 @@ DOMAIN-SUFFIX,v2rayssr.com
 DOMAIN-SUFFIX,qichiyu.com
 DOMAIN-SUFFIX,warp.dev
 DOMAIN-SUFFIX,dba888.xyz
-DOMAIN-SUFFIX,valtrogen.com
