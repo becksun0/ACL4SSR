@@ -4,7 +4,7 @@
       {"tag": "local", "address": "223.5.5.5", "detour": "🎯 全球直连"},
       {"tag": "public", "address": "https://dns.alidns.com/dns-query", "address_resolver": "local", "detour": "🎯 全球直连"},
       {"tag": "foreign", "address": "https://dns.google/dns-query", "address_resolver": "local", "detour": "🚀 默认代理"},
-      {"tag": "fakeip","address": "fakeip" }
+      {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.19.0.0/16", "inet6_range": "fc00::/18"}
     ],
     "rules": [
       {"clash_mode": "direct", "server": "local"},
@@ -14,7 +14,6 @@
       {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1},
       {"rule_set": "geosite-cn", "server": "local"}
     ],
-    "fakeip": {"enabled": true, "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"},
     "final": "foreign",
     "client_subnet": "223.5.5.0/24",
     "strategy": "prefer_ipv4",
