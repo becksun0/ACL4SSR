@@ -99,9 +99,12 @@
     ],
     "rule_set": [
       {"tag": ["fakeipfilter-cn", "fakeipfilter-!cn"], "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/{tag}.json"},
-      {"tag": ["geosite-myproxy", "geosite-mydirect"], "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/becksun0/ACL4SSR/refs/heads/main/sing-box/{tag}.json"},
+      {"tag": "geosite-myproxy", "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/becksun0/ACL4SSR/refs/heads/main/sing-box/myproxy.json"},
+      {"tag": "geosite-mydirect", "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/becksun0/ACL4SSR/refs/heads/main/sing-box/mydirect.json"},
       {"tag": ["geosite-category-ai-!cn", "geosite-youtube", "geosite-google", "geosite-github", "geosite-onedrive", "geosite-microsoft", "geosite-microsoft@cn","geosite-apple", "geosite-apple@cn", "geosite-telegram", "geosite-spotify", "geosite-tiktok", "geosite-twitter", "geosite-netflix", "geosite-paypal", "geosite-binance", "geosite-okx", "geosite-category-cryptocurrency", "geosite-nvidia", "geosite-pubg", "geosite-cn", "geosite-geolocation-!cn", "geosite-private"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs"},
-      {"tag": ["geoip-google", "geoip-telegram", "geoip-twitter"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/{tag}.srs"},
+      {"tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs"},
+      {"tag": "geoip-google",  "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs"},
+      {"tag": "geoip-twitter", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/twitter.srs"},
       {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"}
     ],
     "final": "漏网之鱼",
