@@ -48,7 +48,7 @@
     {"tag": "台湾节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇹🇼|台|新北|彰化|TW|Taiwan|TPE|KHH"]}, {"action": "exclude", "keywords": ["免费"]}], "interval": "3m", "tolerance": 50},
     {"tag": "韩国节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇰🇷|KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN"]}, {"action": "exclude", "keywords": ["免费"]}], "interval": "3m", "tolerance": 50},
     {"tag": "日本节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇯🇵|JP|jp|日本|日|Japan"]}, {"action": "exclude", "keywords": ["免费"]}], "interval": "3m", "tolerance": 50},
-    {"tag": "狮城节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["新加坡|坡|狮城|SG|Singapore"]}, {"action": "exclude", "keywords": ["免费"]}], "interval": "3m", "tolerance": 50},
+    {"tag": "狮城节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇸🇬|新加坡|坡|狮城|SG|Singapore"]}, {"action": "exclude", "keywords": ["免费"]}], "interval": "3m", "tolerance": 50},
     {"tag": "美国节点", "type": "urltest", "outbounds": ["{all}"], "filter": [{"action": "include", "keywords": ["🇺🇸|US|us|美国|美|United States"]}, {"action": "exclude", "keywords": ["AUS|RUS|免费"]}], "interval": "3m", "tolerance": 50},
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["直连", "默认代理", "手动选择", "香港节点", "台湾节点", "韩国节点", "日本节点", "狮城节点", "美国节点", "{all}"]},
     {"tag": "直连", "type": "direct", "domain_resolver": "ali"}
