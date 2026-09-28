@@ -20,7 +20,7 @@
       {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
     ],
     "final": "google",
-    "strategy": "prefer_ipv4",
+    "strategy": "ipv4_only",
     "cache_capacity": 8192,
     "optimistic": {"enabled": true},
     "reverse_mapping": true
@@ -40,7 +40,7 @@
     {"tag": "Netflix", "type": "selector", "outbounds": ["默认代理", "自动选择", "香港节点", "台湾节点", "韩国节点", "日本节点", "狮城节点", "美国节点", "直连"]},
     {"tag": "Wallet", "type": "selector", "outbounds": ["默认代理", "自动选择", "手动选择", "香港节点", "台湾节点", "韩国节点", "日本节点", "狮城节点", "美国节点", "直连"]},
     {"tag": "Nvidia", "type": "selector", "outbounds": ["默认代理", "自动选择", "香港节点", "韩国节点", "狮城节点", "美国节点", "直连"]},
-    {"tag": "PUBG", "type": "selector", "outbounds": ["{all}"]},
+    {"tag": "PUBG", "type": "selector", "outbounds": ["直连", "{all}"]},
     {"tag": "Microsoft", "type": "selector", "outbounds": [ "香港节点", "美国节点", "直连", "{all}"]},
     {"tag": "Apple", "type": "selector", "outbounds": ["香港节点", "美国节点", "直连", "{all}"]},
     {"tag": "漏网之鱼", "type": "selector", "outbounds": ["直连", "{all}"]},
