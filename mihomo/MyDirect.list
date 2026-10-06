@@ -4,7 +4,8 @@
 DOMAIN-KEYWORD,ffzy
 DOMAIN-KEYWORD,lzizy
 DOMAIN-KEYWORD,mirror
-DOMAIN-KEYWORD,xunlei,DIRECT
+DOMAIN-KEYWORD,xunlei
+DOMAIN-KEYWORD,mypikpak
 
 # 匹配域名后缀
 DOMAIN-SUFFIX,time.windows.com
