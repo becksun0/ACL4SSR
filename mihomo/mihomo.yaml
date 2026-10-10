@@ -32,7 +32,7 @@ rule-anchor:
   domain_text: &domain_text {type: http, interval: 86400, behavior: domain, format: text}
 
 proxy-providers:
-  HH: {<<: *P, url: "https://www.wogb.top/abiabi/vip/client/subscribe?token=04d75700b266c3bc9a2511cb043680e2"}
+  HH: {<<: *P, url: "订阅URL"}
 
 proxies:
   - {name: 直连, type: direct, udp: true}
