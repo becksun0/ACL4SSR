@@ -6,9 +6,9 @@ rule-anchor:
   P: &P {type: http, interval: 0, health-check: {enable: true, url: 'https://www.gstatic.com/generate_204', interval: 180}, exclude-filter: "官网|剩余|流量|套餐|订阅|直连|到期时间|GB|Expire Date|Traffic|ExpireDate", proxy: 直连}
   # 节点选择
   G1: &G1 {type: select, proxies: [默认代理, 自动选择, 香港节点, 台湾节点, 韩国节点, 日本节点, 狮城节点, 美国节点, 手动选择, 直连]}
-  S1: &S1 {type: select, proxies: [自动选择, 香港节点, 台湾节点, 韩国节点, 日本节点, 狮城节点, 美国节点, 手动选择, 直连]}
+  S1: &S1 {type: select, proxies: [自动选择, 香港节点, 台湾节点, 韩国节点, 日本节点, 狮城节点, 美国节点, 手动选择]}
   S2: &S2 {type: select, proxies: [默认代理, 自动选择, 香港节点, 韩国节点, 狮城节点, 美国节点, 直连]}
-  S3: &S3 {type: select, proxies: [直连, 香港节点, 美国节点]}
+  S3: &S3 {type: select, proxies: [香港节点, 美国节点]}
   S5: &S5 {type: url-test, proxies: [直连, DIRECT], interval: 3600, lazy: true, url: "http://connect.rom.miui.com/generate_204"}
   # 节点筛选
   HK: &HK "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"
@@ -17,7 +17,7 @@ rule-anchor:
   SG: &SG "(?=.*(新加坡|坡|狮城|SG|Singapore))^((?!(港|台|日|韩|ZJ)).)*$"
   US: &US "(?=.*(美|US|(?i)States|America))^((?!(港|台|日|韩|新)).)*$"
   KR: &KR "(?=.*(KR|Korea|KOR|Seoul|首尔|春川|韩|韓|ICN))^((?!(港|台|日|美|新)).)*$"
-  Exclude: &Exclude "^((?!(官网|剩余|流量|套餐|订阅|到期时间|直连|GB|Expire Date|Traffic|ExpireDate)).)*$"
+  Exclude: &Exclude "^((?!(官网|剩余|流量|套餐|订阅|到期时间|GB|Expire Date|Traffic|ExpireDate)).)*$"
   # 策略组
   SD: &SD {type: select, include-all: true}
   FB: &FB {type: fallback, include-all: true, interval: 180, lazy: true, url: 'https://www.gstatic.com/generate_204'}
@@ -32,7 +32,7 @@ rule-anchor:
   domain_text: &domain_text {type: http, interval: 86400, behavior: domain, format: text}
 
 proxy-providers:
-  HH: {<<: *P, url: "订阅URL"}
+  HH: {<<: *P, url: "https://www.wogb.top/abiabi/vip/client/subscribe?token=04d75700b266c3bc9a2511cb043680e2"}
 
 proxies:
   - {name: 直连, type: direct, udp: true}
@@ -137,34 +137,35 @@ dns:
 proxy-groups:
   - {name: 默认代理, <<: *S1, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/select.png"}
   - {name: 手动选择, <<: *SD, filter: *Exclude, icon: *All}
-  - {name: 全部自动, <<: *URL, filter: *Exclude, icon: *Auto}
+  - {name: 自动选择, <<: *URL, exclude-filter: "直连", icon: *Auto}
   - {name: YouTube, <<: *S1, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/youtube.png"}
-  - {name: Google, <<: *S1&*SD, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/google.png"}
-  - {name: GitHub, <<: *S1&*SD, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/github.png"}
-  - {name: Telegram, <<: *S1&*SD, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/telegram.png"}
-  - {name: AI, <<: *S1&*SD, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/ai.png"}
-  - {name: Spotify, <<: *S1&*SD, icon: "🎵"}
+  - {name: Google, <<: [*S1, *SD], icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/google.png"}
+  - {name: GitHub, <<: [*S1, *SD], icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/github.png"}
+  - {name: Telegram, <<: [*S1, *SD], icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/telegram.png"}
+  - {name: AI, <<: [*S1, *SD], icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/ai.png"}
+  - {name: Spotify, <<: [*S1, *SD], icon: "https://raw.githubusercontent.com/becksun0/HD-Icons/refs/heads/main/border-radius/spotify-1.png"}
   - {name: TikTok, <<: *S1, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/douyin.png"}
-  - {name: Twitter, <<: *S1&*SD, icon: "𝕏"}
+  - {name: Twitter, <<: [*S1, *SD], icon: "https://raw.githubusercontent.com/becksun0/ACL4SSR/refs/heads/main/mihomo/x-100.png"}
   - {name: NETFLIX, <<: *S1, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/netflix.png"}
   - {name: Wallet, <<: *S1, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/wallet.png"}
-  - {name: PUBG, <<: *S1&*SD, icon: "🪖"}
-  - {name: Microsoft, <<: *S3&*SD, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/microsoft.png"}
-  - {name: Apple, <<: *S3&*SD, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/apple.png"}
+  - {name: PUBG, <<: [*S1, *SD], icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/game.png"}
+  - {name: Microsoft, <<: [*S3, *SD], icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/microsoft.png"}
+  - {name: Apple, <<: [*S3, *SD], icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/apple.png"}
   - {name: 漏网之鱼, <<: *G1, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/final.png"}
-  - {name: 香港节点, <<: *URL, filter: *HK, icon: *Auto}
-  - {name: 台湾节点, <<: *URL, filter: *TW, icon: *Auto}
-  - {name: 韩国节点, <<: *URL, filter: *TW, icon: *Auto}
-  - {name: 日本节点, <<: *URL, filter: *JP, icon: *Auto}
-  - {name: 狮城节点, <<: *URL, filter: *SG, icon: *Auto}
-  - {name: 美国节点, <<: *URL, filter: *US, icon: *Auto}
-  - {name: 延迟辅助, <<: *S5, icon: *Auto}
+  - {name: 香港节点, <<: *URL, filter: *HK, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/flag/glasscorner/hongkong.png"}
+  - {name: 台湾节点, <<: *URL, filter: *TW, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/flag/glasscorner/taiwan.png"}
+  - {name: 韩国节点, <<: *URL, filter: *TW, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/flag/glasscorner/south_korea.png"}
+  - {name: 日本节点, <<: *URL, filter: *JP, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/flag/glasscorner/japan.png"}
+  - {name: 狮城节点, <<: *URL, filter: *SG, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/flag/glasscorner/singapore.png"}
+  - {name: 美国节点, <<: *URL, filter: *US, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/flag/glasscorner/usa.png"}
   - {name: GLOBAL, <<: *G1, icon: "https://raw.githubusercontent.com/s0lnce/mofish-icon/refs/heads/main/mihomo/glass2/corner/all.png"}
 
 rules:
   - AND,((RULE-SET,cn!_domain),(DST-PORT,443),(NETWORK,UDP)),REJECT
   - RULE-SET,private_ip,直连,no-resolve
   - RULE-SET,private_domain,直连
+  - RULE-SET,mydirect,直连
+  - RULE-SET,myproxy,手动选择
   - RULE-SET,ai_domain,AI
   - RULE-SET,spotify_domain,Spotify
   - RULE-SET,youtube_domain,YouTube
@@ -193,6 +194,8 @@ rules:
 rule-providers:
   fakeipfilter_cn: {<<: *domain_text, url: "https://gh-proxy.org/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/fakeipfilter-cn.list"}
   fakeipfilter_!cn: {<<: *domain_text, url: "https://gh-proxy.org/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/fakeipfilter-!cn.list"}
+  mydirect: { <<: *domain_text, url: "https://gh-proxy.org/https://raw.githubusercontent.com/becksun0/ACL4SSR/refs/heads/main/mihomo/MyDirect.list" }
+  myproxy: { <<: *domain_text, url: "https://gh-proxy.org/https://raw.githubusercontent.com/becksun0/ACL4SSR/refs/heads/main/mihomo/MyProxy.list" }
   private_domain: {<<: *domain, url: "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
   ai_domain: {<<: *domain, url: "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ai-!cn.mrs"}
   youtube_domain: {<<: *domain, url: "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
@@ -212,6 +215,9 @@ rule-providers:
   usd_domain: {<<: *domain, url: "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-cryptocurrency.mrs"}
   cn!_domain: {<<: *domain, url: "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
   cn_domain: {<<: *domain, url: "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
+  pubg_domain: { <<: *domain, url: "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/pubg.mrs" }
+  steamcn_domain: {<<: *domain, url: "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam@cn.mrs"}
+  steam_domain: {<<: *domain, url: "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs"}
 
   google_ip: {<<: *ip, url: "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
   apple_ip: {<<: *ip, url: "https://gh-proxy.org/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo-lite/geoip/apple.mrs"}
