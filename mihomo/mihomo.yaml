@@ -59,7 +59,7 @@ external-controller: 0.0.0.0:9090
 secret: ""
 external-ui: ui
 external-ui-name: zashboard
-external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+external-ui-url: "https://gh-proxy.org/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
 
 geox-url:
   mmdb: "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
@@ -71,6 +71,7 @@ ntp:
 tun:
   enable: true
   stack: mixed   ##如果内核版本大于v1.19.31，此处可以改为自研协议栈 mips ，理论上性能更好。
+  mtu: 1400
   dns-hijack: ["any:53", "tcp://any:53"]
   auto-route: true
   auto-redirect: true
