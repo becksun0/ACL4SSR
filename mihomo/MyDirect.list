@@ -1,17 +1,17 @@
 # 自定义直连Direct
 
-# 匹配域名关键字
-DOMAIN-KEYWORD,ffzy
-DOMAIN-KEYWORD,lzizy
-DOMAIN-KEYWORD,mirror
-DOMAIN-KEYWORD,xunlei
-
-# 匹配域名后缀
-DOMAIN-SUFFIX,time.windows.com
-DOMAIN-SUFFIX,speedtest.net
-DOMAIN-SUFFIX,nnvod.com
-DOMAIN-SUFFIX,guangsuzy.com
-DOMAIN-SUFFIX,xunlei.com,DIRECT
-DOMAIN-SUFFIX,sandai.net,DIRECT
-DOMAIN-SUFFIX,onethingcloud.com,DIRECT
-DOMAIN-SUFFIX,igoutu.cn
++.ffzy*.*
++.lzizy.*
+*.lzdown*.*
+*.lzcdn*.*
+*.lz-cdn11*.*
++.mirror*.*
++.xunlei.*
++.time.windows.com
++.speedtest.net
++.nnvod.com
++.guangsuzy.com
++.xunlei.com,DIRECT
++.sandai.net,DIRECT
++.onethingcloud.com,DIRECT
++.igoutu.cn
