@@ -1,12 +1,15 @@
 # 自定义直连Direct
 
-+.ffzy*.*
-+.lzizy.*
-*.lzdown*.*
-*.lzcdn*.*
-*.lz-cdn11*.*
-+.mirror*.*
-+.xunlei.*
++.ffzy1.tv
++.ffzy2.tv
++.ffzy3.tv
++.ffzy4.tv
++.ffzy5.tv
+lzizy
+lzdown
+lzcdn
+lz-cdn11
+mirror
 +.time.windows.com
 +.speedtest.net
 +.nnvod.com
