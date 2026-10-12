@@ -184,6 +184,7 @@ rules:
   - RULE-SET,okx_domain,Wallet
   - RULE-SET,usd_domain,Wallet
   - RULE-SET,cn!_domain,默认代理
+  - RULE-SET,cn_domain,直连
   - RULE-SET,google_ip,Google
   - RULE-SET,apple_ip,Apple
   - RULE-SET,telegram_ip,Telegram
